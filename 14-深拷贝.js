@@ -7,20 +7,9 @@
  * 1. 可以拷贝null
  * 2. undefined, Symbol, function 被过滤
  * 3. Date 被转字符串
+ * 4. NaN，变为null
  */
-// 基本深拷贝
-function deepClone(obj) {
-	var newObj = obj instanceof Array ? [] : {}
-	for (var i in obj) {
-		newObj[i] = typeof obj[i] === 'object' ? deepClone(obj[i]) : obj[i]
-	}
-	return newObj
-}
-console.log(deepClone(obj))
-// JSON
-var copyObj = JSON.parse(JSON.stringify(obj))
-console.log(copyObj)
-
+// test
 var obj = {
 	number: 1,
 	string: 'abc',
@@ -39,3 +28,16 @@ var obj = {
 		console.log('hello better')
 	}
 }
+// 基本深拷贝
+function deepClone(obj) {
+	var newObj = obj instanceof Array ? [] : {}
+	for (var i in obj) {
+		newObj[i] = typeof obj[i] === 'object' ? deepClone(obj[i]) : obj[i]
+	}
+	return newObj
+}
+// console.log(deepClone(obj))
+
+// JSON
+var copyObj = JSON.parse(JSON.stringify(obj))
+console.log(copyObj)
