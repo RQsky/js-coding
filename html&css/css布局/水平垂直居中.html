@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+	<!-- 测试flex布局中，item的flex属性，也即 flex-grow, flex-shrink, flex-basis -->
+	<style>
+		.container {
+			margin: 100px auto;
+			border: 2px solid;
+			width: 500px;
+			height: 300px;
+		}
+		.box1 {
+			width: 200px;
+			height: 100px;
+			background-color: cadetblue;
+		}
+		/* 法1 */
+		/* .container {
+			position: relative;
+		}
+		.box1 {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -100px;
+			margin-top: -50px;
+		} */
+		/* 法2 */
+		.container {
+			position: relative;
+		}
+		.box1 {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		/* 法3 */
+		/* .container {
+			position: relative;
+		}
+		.box1 {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		} */
+		/* 法4 flex */
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box1">1</div>
+	</div>
+</body>

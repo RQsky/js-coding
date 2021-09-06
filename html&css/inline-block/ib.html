@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+	<!-- 还是没懂为什么inline-block有间隙 -->
+	<style>
+		.container {
+			margin: 100px auto;
+			width: 500px;
+			height: 300px;
+			border: 2px solid;
+		}
+		.item {
+			display: inline-block;
+			font-size: 0;
+			margin: 0;
+			letter-spacing: 0;
+			word-spacing: 0;
+		}
+		.box1 {
+			width: 200px;
+			height: 100px;
+			background-color: cadetblue;
+		}
+		.box2 {
+			width: 100px;
+			height: 100px;
+			background-color: brown;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item box1">1</div>
+		<div class="item box2">2</div>
+	</div>
+</body>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+	<!-- 测试flex布局中，item的flex属性，也即 flex-grow, flex-shrink, flex-basis -->
+	<style>
+		.container {
+			margin: 100px auto;
+			display: flex;
+			flex-wrap: nowrap;
+			width: 500px;
+			height: 300px;
+			border: 2px solid;
+			align-content: center;
+			align-items: center;
+		}
+		.item {
+			/* height: 50px; */
+			/* width: 300px; */
+            flex-basis: 50px;
+		}
+		.box1 {
+            max-width: 10px;
+			width: 200px;
+			height: 100px;
+			flex-shrink: 0.1;
+			background-color: cadetblue;
+		}
+		.box2 {
+			flex-grow: 0.5;
+			width: 400px;
+            flex-shrink: 0.2;
+			background-color: brown;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item box1">1</div>
+		<div class="item box2">2</div>
+</body>
