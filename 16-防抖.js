@@ -10,11 +10,9 @@
 function debounce(fn, wait) {
 	var timeId = null
 	return function () {
-		var context = this // 保存绑定事件的对象，如document
-		var args = arguments // 获取事件参数，如event
 		timeId && clearTimeout(timeId) // 如果规定时间内（wait）再次触发事件，则清除定时器  // 这句应该意思是 if (timeId) clearTimeOut(timeId)
 		timeId = setTimeout(function () {
-			fn.apply(context, args) // 使用apply方法把fn函数的this指向事件对象
+			fn.apply(this, arguments) // 使用apply方法把fn函数的this指向事件对象
 		}, wait)
 	}
 }

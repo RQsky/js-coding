@@ -8,8 +8,8 @@
 const myNew = function () {
 	let obj = {}
 	let Constructor = [].shift.call(arguments)
-	let ret = Constructor.apply(obj, arguments)
 	obj.__proto__ = Constructor.prototype
+	let ret = Constructor.apply(obj, arguments)
 	return typeof ret === 'object' ? ret : obj // 构造函数返回值若不是对象，要主动返回对象引用
 }
 

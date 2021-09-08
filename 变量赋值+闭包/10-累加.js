@@ -8,11 +8,10 @@
  */
 let add = (...args) => {
 	let foo = (...newArgs) => {
-		console.log(...args, '+', ...newArgs)
 		return add(...args, ...newArgs)
 	}
-	foo.sum = () => {
-		return args.reduce((a, b) => a + b)
+	foo.toString = () => {
+		return args.reduce((pre, el) => pre + el)
 	}
 	return foo
 }

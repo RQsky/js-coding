@@ -8,12 +8,10 @@
 function throttle(fn, wait) {
 	var prev = 0
 	return function () {
-		var context = this
-		var args = arguments
 		var now = new Date().getTime()
 		if (now - prev > wait) {
 			// 如果时间间隔大于wait，执行函数
-			fn.apply(context, args)
+			fn.apply(this, arguments)
 			prev = now // 把当前时间赋值给前一个时间
 		}
 	}
@@ -22,10 +20,8 @@ function throttle(fn, wait) {
 function throttle(fn, wait) {
 	var timeId = null
 	return function () {
-		var context = this
-		var args = arguments
 		if (!timeId) {
-			fn.apply(context, args)
+			fn.apply(this, arguments)
 			timeId = setTimeout(function () {
 				timeId = null
 			}, wait)
