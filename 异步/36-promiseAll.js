@@ -7,9 +7,15 @@
 Promise.myAll = function (promiseArr) {
 	return new Promise((resolve, reject) => {
 		const ans = []
+		let index = 0 // 为什么要用index计数因为then是微任务，若在for循环结束resolve会破坏执行顺序
 		for (let i in promiseArr) {
-			promiseArr[i].then(res => (ans[i] = res)).catch(err => reject(err))
+			promiseArr[i]
+				.then(res => {
+					ans[i] = res
+					index++
+					if (index === promiseArr.length) resolve(ans)
+				})
+				.catch(err => reject(err))
 		}
-		resolve(ans)
 	})
 }

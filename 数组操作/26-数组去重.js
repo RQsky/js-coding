@@ -21,7 +21,7 @@
 const a = [1, 1, 2, 1, 2]
 let res = []
 
-// // 1. indexOf去重（index新数组）,O(n^2)
+// // 1. indexOf去重（index新数组）,O(n^2)。这里也可以用includes。
 a.forEach(x => {
 	if (res.indexOf(x) === -1) res.push(x)
 })
@@ -42,5 +42,7 @@ a.forEach((x, i) => {
 res = [...new Set(a)]
 // res = Array.from(new Set(a))
 // Map不行，Map() 接收一个迭代器对象，子元素是数组形式的键值对
+
+// 5.
 
 console.log(res)

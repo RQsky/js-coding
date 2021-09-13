@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+	<style>
+		.lazy {
+			background-color: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		/**
+		 * 让图片加载的条件是：视口高度 + 滚动条高度 = 图片上边界到body顶部的距离
+		 */
+		function lazyload() {
+			const imgs = document.getElementsByTagName('img')
+			const len = imgs.length
+			const viewHeight = document.documentElement.clientHeight // 视口高度
+			const scrollHeight = document.documentElement.scrollTop || document.body.scrollTop // 滚动条高度
+			for (let i in imgs) {
+				const offsetHeight = imgs[i].offsetTop // 图片距离body上边界的高度
+				if (offsetHeight < viewHeight + scrollHeight) imgs[i].src = imgs[i].dataset.src
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="lazy"></div>
+</body>
