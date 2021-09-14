@@ -5,7 +5,8 @@ async function async1() {
 	console.log('async1 end')
 }
 async function async2() {
-	console.log('async2 end')
+	await console.log('async2 pause')
+	console.log('async2 after await')
 }
 async1()
 
