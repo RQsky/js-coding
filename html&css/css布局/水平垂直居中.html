@@ -47,6 +47,17 @@
 		} */
 		/* 法4 flex */
 	</style>
+	<script type="text/javascript">
+		function smallFun(y) {
+			let x = 10
+			let aaa = () => {}
+			aaa.toString = () => {
+				return x + y
+			}
+			return aaa
+		}
+		alert(smallFun(10)) //20
+	</script>
 </head>
 <body>
 	<div class="container">
